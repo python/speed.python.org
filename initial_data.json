@@ -1,0 +1,44 @@
+[
+    {
+        "pk": 1,
+        "model": "codespeed.project",
+        "fields": {
+            "repo_type": "M",
+            "name": "CPython",
+            "commit_browsing_url": "https://hg.python.org/lookup/{commitid}",
+            "repo_user": "",
+            "track": true,
+            "repo_pass": "",
+            "repo_path": "https://hg.python.org/cpython"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "codespeed.environment",
+        "fields": {
+            "kernel": "Linux 3.13.0-39-generic x86_64",
+            "memory": "4x 4GB (1x4GB) Dual Rank x4 PC3-10600 (DDR3-1333) Registered CAS-9 Memory Kit",
+            "os": "Ubuntu 14.04.3 LTS",
+            "name": "speed-python",
+            "cpu": "2 HP DL380 G7 Intel® Xeon® X5680 (3.33GHz/6-core/130W/12MB) FIO Processor Kit"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "zware",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2015-09-22T15:14:04.833",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$12000$cLV6CawDMHc9$Mk13cLf8vTLkub/TwJMuY3D56OYQ4FXweEAqO7Dd3Rw=",
+            "email": "zachary.ware@gmail.com",
+            "date_joined": "2015-09-22T15:14:04.833"
+        }
+    }
+]
