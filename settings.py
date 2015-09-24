@@ -54,8 +54,8 @@ MEDIA_URL = '/media/'
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'as%n_m#)^vee2pe91^^@c))sl7^c6t-9r8n)_69%)2yt+(la2&'
+with open(os.path.join(BASEDIR, 'secret_key')) as f:
+    SECRET_KEY = f.read().strip()
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -83,7 +83,7 @@ if DEBUG:
                                  (request.build_absolute_uri(),
                                   traceback.format_exc()))
     # And add it to the middleware classes
-    MIDDLEWARE_CLASSES += ('sample_project.settings.LogUncatchedErrors',)
+    MIDDLEWARE_CLASSES += ('speed_python.settings.LogUncatchedErrors',)
 
     # set shown level of logging output to debug
     logging.basicConfig(level=logging.DEBUG)
@@ -112,6 +112,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'codespeed',
     'south',
+    'gunicorn',
 )
 SOUTH_TESTS_MIGRATE = False
 
@@ -187,3 +188,57 @@ WEBSITE_NAME = "MySpeedSite" # This name will be used in the reports RSS feed
 #DEF_BRANCH = "default" # Defines the default branch to be used.
                        # In git projects, this branch is usually be calles
                        # "master"
+
+# FIXME: Copied from Django docs (and pared down a bit)
+#        This is just enough to make gunicorn happy
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+  #  'filters': {
+  #      'special': {
+  #          '()': 'project.logging.SpecialFilter',
+  #          'foo': 'bar',
+  #      }
+  #  },
+    'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'django.utils.log.NullHandler',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+ #           'filters': ['special']
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['null'],
+            'propagate': True,
+            'level': 'INFO',
+        },
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+#        'myproject.custom': {
+#            'handlers': ['console', 'mail_admins'],
+#            'level': 'INFO',
+#            'filters': ['special']
+#        }
+    }
+}
