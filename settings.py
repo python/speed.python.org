@@ -37,8 +37,9 @@ MEDIA_URL = '/media/'
 
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
-with open(os.path.join(BASEDIR, 'secret_key')) as f:
-    SECRET_KEY = f.read().strip()
+# XXX Set SECRET_KEY in local_settings.py
+#with open(os.path.join(BASEDIR, 'secret_key')) as f:
+#    SECRET_KEY = f.read().strip()
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
