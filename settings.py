@@ -103,3 +103,5 @@ STATICFILES_DIRS = (
 
 # Codespeed settings that can be overwritten here.
 from codespeed.settings import *
+
+from .local_settings import *
