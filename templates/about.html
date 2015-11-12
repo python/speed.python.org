@@ -5,18 +5,90 @@
 </div>
 <div id="about" class="about_content clearfix">
 <h3>About this site</h3>
-<p>&lt;description of site and what benchmarks that are run&gt;</p>
-<p>This site runs on top of Django and Codespeed</p>
+<p>Welcome to the speed.python.org project - this project is aimed at
+constructing a shared benchmark system based on the excellent
+<a href="http://speed.pypy.org/" target="_blank">speed.pypy.org</a>
+project.</p>
+<p>This project will setup a common, shared instance of the benchmarking
+suite and visualization tools put together by the
+<a href="http://pypy.org/" target="_blank">PyPy team</a>, based on work
+from the <a href="http://code.google.com/p/unladen-swallow/" target="_blank">
+Unladen Swallow project</a>.
+<p>Coming out of the PyCon 2011 VM and language summits, it was commonly
+agreed that PyPy, CPython, IronPython and Jython should strive to move
+to a common set of benchmarks and a single performance-oriented site.
+This was agreed upon by the maintainers present at the conference, and
+included leads from all of the major implementations. This project
+would be lead by the various VM development teams, and based around
+the Unladen Swallow/PyPy benchmark suite.
+</p>
+<p>Once set up, this site will be prominently linked on Python.org, and serve
+as a resource for all Python users - both existing and potential - to evaluate
+the various Python runtimes on both performance, memory usage, etc. Our goal is
+to provide a resource that will both educate and assist users, maintainers and
+the community as a whole.
+</p>
+<p>You can see the announcement, and more details at the announcement of the
+machine acquisition on
+<a href="http://jessenoller.com/2011/06/29/announcing-the-new-speed-python-org-machine/" target="_blank">
+Jesse Noller's blog.</a></p>
+<p>For now, only CPython is being benchmarked, but we hope to expand in the future.</p>
+<h4>The Machine</h4>
+<p>Nicknamed "the beast" - the speed.python.org machine was generously donated to the
+Python Software foundation by the <a href="http://hp.com/go/linux" target="_blank">
+HP Open Source Program office</a>.
+<p>The hardware specs are:
+<ul>
+    <li>DL380 HP DL380G7 X5670 LFF (2U)</li>
+    <li>Dual HP NC382i Dual Port Multifunction Gigabit Server Adapters</li>
+    <li>HP Smart Array P410i/1GB FBWC Controller</li>
+    <li>4x 4GB (1x4GB) Dual Rank x4 PC3-10600 (DDR3-1333) Registered CAS-9
+    Memory Kit</li>
+    <li>2x HP 750W Common Slot Gold Hot Plug Power Supply Kit</li>
+    <li>HP iLO Advanced including 1yr 24x7 Technical Support and Updates
+    Electronic  License</li>
+    <li>4x HP 300GB 6G SAS 15K rpm LFF (3.5-inch) Dual Port Enterprise 3yr
+    Warranty Hard Drive</li>
+    <li>2 HP DL380 G7 Intel® Xeon® X5680 (3.33GHz/6-core/130W/12MB) FIO
+    Processor Kit</li>
+</ul>
+The machine is configured with Ubuntu 11.04, HW RAID and a simple LVM setup.
+HP's generous donation can not be spoken of highly enough.
+</p>
+
+<h4>The Hosting</h4>
+<p>The racking, stacking and hardware administration and all bandwidth has been
+generously donated by the <a href="http://osuosl.org/" target="_blank">
+The Oregon State University Open Source Lab</a> (OSUOSL)
+who have been amazing open source supporters, and supporters of the Python
+Software foundation.</p>
+
+<p>We can not thank OSUOSL enough for the hosting and administration.</p>
+
+<h4>Resources</h4>
+<ul>
+    <li>
+        <a href="http://mail.python.org/mailman/listinfo/speed" target="_blank">The mailing list</a>
+        is here - if you want to volunteer to help out with the project, this
+        is the place to start.
+    </li>
+    <li>
+        <a href="http://mail.python.org/pipermail/speed/" target="_blank">The list archives</a>
+    </li>
+</ul>
+
 <h3>About the benchmarks</h3>
-<p>The code can be found <a href="#">here</a>.</p>
-<h3>About MyProject</h3>
-<p>&lt;Description of the main project&gt;</p>
-<p>Main website: <a href="#">MySite</a></p>
+<p>The code can be found <a href="https://hg.python.org/benchmarks">here</a>.</p>
+<h3>About Python</h3>
+<p>Python is a programming language that lets you work quickly and integrate systems more effectively.</p>
+<p>Main website: <a href="https://python.org/">python.org</a></p>
 <h3>About Codespeed</h3>
 Codespeed is a web application to monitor and analyze the performance of your code.
-<p>Code: <a href="http://github.com/tobami/codespeed">github.com/tobami/codespeed</a></p>
+<p>Original Code: <a href="http://github.com/tobami/codespeed">github.com/tobami/codespeed</a></p>
+<p>Code for this site: <a href="http://github.com/zware/codespeed">github.com/zware/codespeed</a></p>
 <p>Wiki: <a href="http://wiki.github.com/tobami/codespeed/">wiki.github.com/tobami/codespeed/</a></p>
 <h3>Contact</h3>
-<p>For problems or suggestions about this website write to...</p>
+<p>For problems or suggestions about this website write to
+    <a href="http://mail.python.org/mailman/listinfo/speed">the Python Speed mailing list</a></p>
 </div>
 {% endblock %}
